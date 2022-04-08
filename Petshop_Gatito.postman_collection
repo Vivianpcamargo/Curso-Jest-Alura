@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "230421cf-5b8b-49f2-9e88-257fb8e20e84",
+		"name": "Documentação da API para o Petshop Gatito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lista de Fornecedores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{publicIP}}/api/fornecedores",
+					"host": [
+						"{{publicIP}}"
+					],
+					"path": [
+						"api",
+						"fornecedores"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Lista de fornecedores cadastrados na API",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/fornecedores",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"fornecedores"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4c-1fGVU81N8wKc0BnIy2znoe42HRM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Apr 2022 16:52:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"empresa\": \"Gatito brinquedos para cães\",\n        \"categoria\": \"brinquedos\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obter Detalhes do Fornecedor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/api/fornecedores/1",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"fornecedores",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Resultado dos detalhes de um fornecedor completo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/fornecedores/1",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"fornecedores",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "177"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b1-YIVW8b+baCAq/7lHbyDxD9eY0zI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Apr 2022 16:52:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"1\",\n    \"empresa\": \"Gatito brinquedos para cães\",\n    \"categoria\": \"brinquedos\",\n    \"email\": \"contato@gatito.com.br\",\n    \"dataCriacao\": \"2022-04-08\",\n    \"dataAtualizacao\": \"2022-04-08\",\n    \"versao\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Cadastrar Fornecedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"empresa\": \"Gatito brinquedos para cães\",\r\n    \"email\": \"contato@gatito.com.br\",\r\n    \"categoria\": \"brinquedos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/api/fornecedores/",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"api",
+						"fornecedores",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Resultado do cadastro de um fornecedor novo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empresa\": \"Gatito brinquedos para cães\",\r\n    \"email\": \"contato@gatito.com.br\",\r\n    \"categoria\": \"brinquedos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/fornecedores/",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"fornecedores",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-7NUCiM8MMDt6JiLC0qngYqA8ang\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Apr 2022 16:52:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"empresa\": \"Gatito brinquedos para cães\",\n    \"categoria\": \"brinquedos\"\n}"
+				}
+			]
+		}
+	]
+}
